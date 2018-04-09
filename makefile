@@ -1,12 +1,13 @@
-CC = g++
+CC = gcc
 CFLAGS=-g
 
-all: jsonparser.o list.o hash_map.o 
-	g++ $(CFLAGS) jsonparser.o list.o hash_map.o  -static -o test.exe
+all: jsonparser.o list.o hash_map.o improved_list_iterator.o
+	$(CC) $(CFLAGS) jsonparser.o list.o hash_map.o improved_list_iterator.o  -static -o test.exe
 main: jsonparser.c
-	g++ $(CFLAGS) -c jsonparser.c
+	$(CC) $(CFLAGS) -c jsonparser.c
 list: list.c
-	g++ $(CFLAGS) -c list.c
+	$(CC) $(CFLAGS) -c list.c
 map: hash_map.c
-	g++ $(CFLAGS) -c hash_map.c
-
+	$(CC) $(CFLAGS) -c hash_map.c
+improved_list_iterator:
+	$(CC) $(CFLAGS) -c improved_list_iterator.c

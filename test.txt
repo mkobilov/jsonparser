@@ -1,3 +1,4 @@
 {
-"w" : "succ",
-"e" : "cuc"}
+"we ll" : "sh\"it",
+"da" : "kak"
+}
