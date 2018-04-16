@@ -1,4 +1,15 @@
 {
-"we ll" : "sh\"it",
-"da" : "kak"
-}
+"da" : [
+			{ "inside" : "listgg"
+			},
+			{"inside" : "list1"
+			}
+		  ],
+"well" : {
+	"key" : "value",
+	"key1" : "value1",
+	"key2" : "sostarils9l"
+
+		},
+"bla" : "blabla"
+}   

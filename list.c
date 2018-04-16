@@ -2,25 +2,22 @@
 
 #include <stdlib.h>
 
-pList CreateList()
-{
+pList CreateList(){						// Create empty list
 	pList lst = (pList) malloc(sizeof(List));
 	
-	lst->first = lst->last = NULL;
+	lst->first = NULL;
+	lst->last = NULL;
 	
 	return lst;
 }
 
-void DeleteList(pList* lst)
-{
-	if(lst == NULL)
-	{
+void DeleteList(pList* lst){
+	if(lst == NULL){
 		return;
 	}
 	
 	ListIterator iter = GetBeginListIterator(*lst);
-	while(!IsListIteratorNULL(&iter))
-	{
+	while(!IsListIteratorNULL(&iter)){
 		DeleteListElementByIterator(&iter);
 		ListIteratorNext(&iter);
 	}
@@ -29,23 +26,20 @@ void DeleteList(pList* lst)
 	*lst = NULL;
 }
 
-void PushBackToList(pList lst, void *value)
-{
-	pListElement new_element = (pListElement) malloc(sizeof(ListElement));
+void PushBackToList(pList lst, void *value){			//Adding elem to the end of the list
+	pListElement newElem = (pListElement) malloc(sizeof(ListElement));
 	
-	new_element->value = value;
+	newElem->value = value;
 	
-	new_element->prev = lst->last;
-	new_element->next = NULL;
+	newElem->prev = lst->last;
+	newElem->next = NULL;
 	
-	if(lst->first == NULL)	// empty list
-	{
-		lst->first = new_element;
-	}
+	if(lst->first == NULL)	
+		lst->first = newElem;
+	
 	else
-	{
-		lst->last->next = new_element;
-	}
+		lst->last->next = newElem;
 	
-	lst->last = new_element;
+	
+	lst->last = newElem;
 }

@@ -20,7 +20,7 @@ typedef struct _hash_map
 
 pHashMap CreateHMap(unsigned);
 void DeleteHMap(pHashMap*);
-
+pList HMapGetKeys(pHashMap);
 void AddToHMap(pHashMap, HMapKeyType, HMapValueType);
 
 int IsInHMap(pHashMap, HMapKeyType);

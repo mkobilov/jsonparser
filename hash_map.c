@@ -7,6 +7,28 @@ int HKeysAreEqual(HMapKeyType a, HMapKeyType b);
 pHashMapElement GetMapElementFromHMap(pHashMap map, HMapKeyType key);
 unsigned hash_func(unsigned size, HMapKeyType key);
 
+
+
+pList HMapGetKeys(pHashMap map)
+{
+	pList list = CreateList();
+	
+	int i;
+	for(i=0; i<map->size; i++)
+	{
+		ListIterator iter;
+		for(iter = GetBeginListIterator(map->data[i]);
+			!IsListIteratorNULL(&iter);
+			ListIteratorNext(&iter))
+		{
+			pHashMapElement current = (pHashMapElement) GetListIteratorValue(&iter);
+			PushBackToList(list, current->key);
+		}
+	}
+	
+	return list;
+}
+
 pHashMap CreateHMap(unsigned size)
 {
 	if(size == 0)
