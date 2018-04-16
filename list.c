@@ -1,6 +1,6 @@
 #include "list.h"
 
-#include <stdlib.h>
+
 
 pList CreateList(){						// Create empty list
 	pList lst = (pList) malloc(sizeof(List));
@@ -12,9 +12,9 @@ pList CreateList(){						// Create empty list
 }
 
 void DeleteList(pList* lst){
-	if(lst == NULL){
+	if(lst == NULL)
 		return;
-	}
+	
 	
 	ListIterator iter = GetBeginListIterator(*lst);
 	while(!IsListIteratorNULL(&iter)){
@@ -27,7 +27,7 @@ void DeleteList(pList* lst){
 }
 
 void PushBackToList(pList lst, void *value){			//Adding elem to the end of the list
-	pListElement newElem = (pListElement) malloc(sizeof(ListElement));
+	pListElement newElem = (pListElement) calloc(1,sizeof(ListElement));
 	
 	newElem->value = value;
 	

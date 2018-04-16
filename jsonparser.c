@@ -40,6 +40,9 @@ int main(){
 	jsonmap->value = map;
 	DeleteJSON(jsonmap);
 	fclose(file);
+	
+
+	
 	return 0;
 }
 
