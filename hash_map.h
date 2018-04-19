@@ -2,6 +2,7 @@
 #define __HASH_MAP_H__
 
 #include "list.h"
+#include "string.h"
 
 typedef char *HMapKeyType;
 typedef void *HMapValueType;
