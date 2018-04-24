@@ -1,11 +1,13 @@
 CC = gcc
 CFLAGS=-g
 
-all: fmain.o jsonparserf.o list.o myhashmap.o listiterator.o
-	$(CC) $(CFLAGS) fmain.o jsonparserf.o list.o myhashmap.o listiterator.o  -static -o test.exe
+all: calc.o  calcf.o jsonparserf.o list.o myhashmap.o listiterator.o
+	$(CC) $(CFLAGS) calc.o calcf.o jsonparserf.o list.o myhashmap.o listiterator.o  -static -o test.exe
 
-main:
-	$(CC) $(CFLAGS) -c fmain.c
+main: calc.c
+	$(CC) $(CFLAGS) -c calc.c
+calcfunctions:calcf.c
+	$(CC) $(CFLAGS) -c calcf.c
 jsonparser: jsonparserf.c
 	$(CC) $(CFLAGS) -c jsonparserf.c
 list: list.c

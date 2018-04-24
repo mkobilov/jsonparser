@@ -4,8 +4,8 @@ int main(){
 	FILE* file = fopen("test.txt","r");
 	
 	pHashMap map = ParseJSON(file);
-	pJsonElement res = GetFromHMap(map,"bla");
-	printf("bla = %s\n",(char*) res->value );
+	assert(IsInHMap(map,"calculate"));
+	printf("bla = %d\n",IsInHMap(map,"calculate"));
 	
 	pJsonElement jsonmap = (pJsonElement) calloc(1,sizeof(JsonElement));
 	jsonmap->type = JSON_MAP;

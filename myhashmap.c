@@ -96,14 +96,15 @@ pHashMapElement GetMapElementFromHMap(pHashMap map, HMapKeyType key){ 				//Help
 }
 void AddToHMap(pHashMap map, HMapKeyType key, HMapValueType value)
 {
-	pHashMapElement element = GetMapElementFromHMap(map, key);
 	
-	if(element){
+	
+	if(IsInHMap(map,key)){
+		pHashMapElement element = GetMapElementFromHMap(map, key);
 		element->value = value;
 		return;
 	}
 	
-	element = (pHashMapElement) calloc(1,sizeof(HashMapElement));
+	pHashMapElement element = (pHashMapElement) calloc(1,sizeof(HashMapElement));
 	element->key = key;
 	element->value = value;
 	
