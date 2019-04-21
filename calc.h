@@ -1,6 +1,6 @@
 #ifndef __CALC_H__
 #define __CALC_H__
-
+//testing merge
 #include "jsonparser.h"
 
 double Calculator(const char* file_name);
